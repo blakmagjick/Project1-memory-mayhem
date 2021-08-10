@@ -1,0 +1,12 @@
+[ ] Need to figure out which pictures I'm using for the game.
+[ ] Need to make a grid for the cards.
+[ ] Add scoreboard to game.
+[ ] Stylize the shit out of it.
+[ ] Make a restart button.
+
+Stretch Goals
+- Allowing the user to pick between 3 different categories of cards to play with (Halloween, Food, Animals)
+- Have more options for how many cards can be played (Easy, medium, hard)
+- Add a timer option to make the game a little harder, player will need to match all the cards before the timer runs out.
+- Give the option to choose different background music
+- Two players are playing on the same board, and the winner is who matches he most pairs
