@@ -1,72 +1,84 @@
 // Project 1 - Memory Mayhem
 
-// Card Options
-const cardsList = [
-    {
-        card: 'wildman',
-        img: 'vanGogh-images/vanGoghWildMan-small'
-    },
-    {
-        card: 'wildman',
-        img: 'vanGogh-images/vanGoghWildMan-small'
-    },
-    {
-        card: 'starryNight',
-        img: 'vanGogh-images/vanGoghStarryNight-small'
-    },
-    {
-        card: 'starryNight',
-        img: 'vanGogh-images/vanGoghStarryNight-small'
-    },
-    {
-        card: 'skeleton',
-        img: 'vanGogh-images/vanGoghSkeleton-small'
-    },
-    {
-        card: 'skeleton',
-        img: 'vanGogh-images/vanGoghSkeleton-small'
-    },
-    {
-        card: 'flowers',
-        img: 'vanGogh-images/vanGoghBeautyEverywhere-small'
-    },
-    {
-        card: 'flowers',
-        img: 'vanGogh-images/vanGoghBeautyEverywhere-small'
-    },
-    {
-        card: 'headshot',
-        img: 'vanGogh-images/vanGoghHeadShot-small'
-    },
-    {
-        card: 'headshot',
-        img: 'vanGogh-images/vanGoghHeadShot-small'
-    },
-    {
-        card: 'mullberrytree',
-        img: 'vanGogh-images/vanGoghMulberryTree-small'
-    },
-    {
-        card: 'mullberrytree',
-        img: 'vanGogh-images/vanGoghMulberryTree-small'
-    }
-]
+// Empty Arrays
+const cardsPicked = []
+const cardsPickedId = []
 
-// Create the Gameboard
-creatingBoard = () => {
-    const gameboard = document.querySelector('#board')
-    for (let i = 0; i < cardsList.length; i++){
-        let cards = document.createElement('img')
-        cards.setAttribute('src', 'Front-Back/memoryBack.png') 
-        cards.setAttribute('data-card', i)
-        gameboard.append(cards)  
+const memGame = {
+// Card Options
+    cardsList: [
+    {
+        card: 'wildman',
+        pic: 'vanGogh-images/vanGoghWildMan-small'
+    },
+    {
+        card: 'wildman',
+        pic: 'vanGogh-images/vanGoghWildMan-small'
+    },
+    {
+        card: 'starryNight',
+        pic: 'vanGogh-images/vanGoghStarryNight-small'
+    },
+    {
+        card: 'starryNight',
+        pic: 'vanGogh-images/vanGoghStarryNight-small'
+    },
+    {
+        card: 'skeleton',
+        pic: 'vanGogh-images/vanGoghSkeleton-small'
+    },
+    {
+        card: 'skeleton',
+        pic: 'vanGogh-images/vanGoghSkeleton-small'
+    },
+    {
+        card: 'flowers',
+        pic: 'vanGogh-images/vanGoghBeautyEverywhere-small'
+    },
+    {
+        card: 'flowers',
+        pic: 'vanGogh-images/vanGoghBeautyEverywhere-small'
+    },
+    {
+        card: 'headshot',
+        pic: 'vanGogh-images/vanGoghHeadShot-small'
+    },
+    {
+        card: 'headshot',
+        pic: 'vanGogh-images/vanGoghHeadShot-small'
+    },
+    {
+        card: 'mullberrytree',
+        pic: 'vanGogh-images/vanGoghMulberryTree-small'
+    },
+    {
+        card: 'mullberrytree',
+        pic: 'vanGogh-images/vanGoghMulberryTree-small'
     }
+    ],
+// Create the Gameboard
+    creatingBoard() {
+        const gameboard = document.querySelector('#board')
+        for (let i = 0; i < this.cardsList.length; i++){
+            let cards = document.createElement('img')
+            cards.setAttribute('src', 'Front-Back/memoryBack.png') 
+            cards.setAttribute('data-card', i)
+            cards.setAttribute('id', 'gameCard')
+            cards.addEventListener('click', this.flipTheCard())
+            gameboard.append(cards)  
+            }
+        },
+// Flip your card
+    flipTheCard () {
+   },
+// Check for matches
+    checkMatches () {
+    } 
+// Scoring
+
+// Eventlisteners
+
+// END OF OBJECT, don't put anything after this curly bracket
 }
 
-creatingBoard()
-
-// Check for matches
-
-// Flip your card
-
-// Scoring
+memGame.creatingBoard()

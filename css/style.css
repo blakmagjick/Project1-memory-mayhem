@@ -1,10 +1,17 @@
 body {
     background-color: dimgray;
     width: 700px;
+    /* height: 470px; */
 }
 
 #board {
     margin: 25px;
     display: flex;
     flex-wrap: wrap;
+    align-content: space-between;
+    padding: 5px;
+}
+
+#gameCard {
+    padding: 5px;
 }
