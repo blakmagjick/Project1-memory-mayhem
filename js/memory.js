@@ -53,6 +53,17 @@ const cardsList = [
 ]
 
 // Create the Gameboard
+creatingBoard = () => {
+    const gameboard = document.querySelector('#board')
+    for (let i = 0; i < cardsList.length; i++){
+        let cards = document.createElement('img')
+        cards.setAttribute('src', 'Front-Back/memoryBack.png') 
+        cards.setAttribute('data-card', i)
+        gameboard.append(cards)  
+    }
+}
+
+creatingBoard()
 
 // Check for matches
 
