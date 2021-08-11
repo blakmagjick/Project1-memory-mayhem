@@ -1,5 +1,7 @@
-[ ] Need to figure out which pictures I'm using for the game.
-[ ] Need to make a grid for the cards.
+[x] Need to figure out which pictures I'm using for the game.
+[x] Need to make a grid for the cards.
+[ ] Need to figure out how to flip cards.
+[ ] Need to figure out how to check if the cards match. 
 [ ] Add scoreboard to game.
 [ ] Stylize the shit out of it.
 [ ] Make a restart button.
