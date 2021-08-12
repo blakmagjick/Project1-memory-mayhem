@@ -4,14 +4,13 @@ body {
     /* height: 470px; */
 }
 
-#board {
+.board {
     margin: 25px;
     display: flex;
     flex-wrap: wrap;
-    align-content: space-between;
     padding: 5px;
 }
 
-#gameCard {
+.cards {
     padding: 5px;
 }
