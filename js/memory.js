@@ -72,18 +72,10 @@ const memGame = {
             cards.addEventListener('click', (event) => memGame.flipTheCard(event))
             }
         },
-        // Check for matches
-
-    // negativeMatch () {
-    //     const noMatch = 
-    // },
-
+// Check for matches
     checkMatches () {
-        // let cards = document.querySelectorAll('img')
         let onePicked = cardsPicked[0] 
-        // console.log(onePicked)
         let twoPicked = cardsPicked[1] 
-        // console.log(twoPicked)
         if (onePicked.card === twoPicked.card){
             alert('You fournd a match')
             memGame.positiveMatch()
@@ -93,8 +85,7 @@ const memGame = {
         }
 
     },
-        // Check for matches
-
+// Does not match
     negativeMatch () {
         let pick1 = cardsPickedId[0]
         let pick2 = cardsPickedId[1]
@@ -105,7 +96,7 @@ const memGame = {
         cardsPicked = []
         cardsPickedId = []
     },
-
+// Does match
     positiveMatch () {
         let pick1 = cardsPickedId[0]
         let pick2 = cardsPickedId[1]
@@ -113,12 +104,11 @@ const memGame = {
         const match2 = document.getElementById(pick2)
         match1.setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/memoryBlank.jpg')
         match2.setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/memoryBlank.jpg')
+        this.scoring()
         cardsPicked = []
         cardsPickedId = []
     },
 // Flip your card
-// Store the first event.target.id
-// Store the second event.target.id
     flipTheCard(event) {
         let selectedCard = event.target.id
         cardsPicked.push(this.cardsList[selectedCard])
@@ -126,13 +116,20 @@ const memGame = {
         event.target.src = this.cardsList[selectedCard].pic
         if (cardsPicked.length === 2){
             setTimeout(this.checkMatches, 300)
-        } 
-         
-    }
-     
-    //  cardsList.sort(() => 0.5 - Math.random())
+        }   
+    },
 // Scoring
+    scoring () {
+        let score = document.getElementById('scoreNum')
+        score.innerHTML++
+    },
+// Game is won
+    win () {
+        if (this.cardsList === 0){
+            alert('You win! ')
+        }
     }
+}
 // END OF OBJECT, don't put anything after this curly bracket
 
 memGame.creatingBoard()

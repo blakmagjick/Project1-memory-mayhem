@@ -14,3 +14,7 @@ body {
 .cards {
     padding: 5px;
 }
+
+.score {
+    color:darkgrey; 
+}
