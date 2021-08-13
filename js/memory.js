@@ -72,40 +72,61 @@ const memGame = {
             }
         },
         // Check for matches
+
+    // negativeMatch () {
+    //     const noMatch = 
+    // },
+
     checkMatches () {
-        let cards = document.querySelectorAll('img')
-        let onePicked = this.cardsPickedId[0] 
-        let twoPicked = this.cardsPickedId[1] 
-        if (onePicked === twoPicked){
+        // let cards = document.querySelectorAll('img')
+        let onePicked = cardsPicked[0] 
+        // console.log(onePicked)
+        let twoPicked = cardsPicked[1] 
+        // console.log(twoPicked)
+        if (onePicked.card === twoPicked.card){
             alert('You fournd a match')
-            cards[onePicked].setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/memoryBlank.png' )
-            cards[twoPicked].setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/memoryBlank.png' )
+            memGame.positiveMatch()
         } else {
             alert('These do not match')
-            cards[onePicked].setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/memoryBack.png' )
-            cards[twoPicked].setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/memoryBack.png')
+           memGame.negativeMatch()
         }
-        this.cardsPicked = []
-        this.cardsPickedId = []
-        console.log('Just Checking')
 
+    },
+        // Check for matches
+
+    negativeMatch () {
+        let pick1 = cardsPickedId[0]
+        let pick2 = cardsPickedId[1]
+        const match = document.getElementById(pick1)
+        const match1 = document.getElementById(pick2)
+        match.setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/memoryBack.png')
+        match1.setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/memoryBack.png')
+        cardsPicked = []
+        cardsPickedId = []
+    },
+
+    positiveMatch () {
+        let pick1 = cardsPickedId[0]
+        let pick2 = cardsPickedId[1]
+        const match1 = document.getElementById(pick1)
+        const match2 = document.getElementById(pick2)
+        match1.setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/memoryBlank.jpg')
+        match2.setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/memoryBlank.jpg')
+        cardsPicked = []
+        cardsPickedId = []
     },
 // Flip your card
 // Store the first event.target.id
 // Store the second event.target.id
     flipTheCard(event) {
         let selectedCard = event.target.id
-        cardsPicked.push(this.cardsList[selectedCard].card)
-        console.log(cardsPicked)
+        cardsPicked.push(this.cardsList[selectedCard])
         cardsPickedId.push(selectedCard)
-        console.log(cardsPickedId)
-        
         event.target.src = this.cardsList[selectedCard].pic
-
         if (cardsPicked.length === 2){
             setTimeout(this.checkMatches, 300)
         } 
-        //   console.log(event.target.id)  
+         
     }
      
     //  cardsList.sort(() => 0.5 - Math.random())
