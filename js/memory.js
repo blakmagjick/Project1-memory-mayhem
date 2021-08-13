@@ -68,6 +68,7 @@ const memGame = {
             cards.setAttribute('id', i)
             cards.setAttribute('class', 'cards')
             gameboard.append(cards)  
+            this.cardsList.sort( () => .5 - Math.random() )
             cards.addEventListener('click', (event) => memGame.flipTheCard(event))
             }
         },
