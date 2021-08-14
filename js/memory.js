@@ -1,86 +1,86 @@
-// document.addEventListener('DOMContentLoaded', () => {
-
-
 // Project 1 - Memory Mayhem
 
-// Empty Array
+// Empty Arrays
     cardsPicked = []
     cardsPickedId = []
     matchedCards = []
-// Card Options
+
 const memGame = {
+    // Card Options
     cardsList: [
-    {
+        {
         card: 'wildman', 
         pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/vanGoghWildMan-small.png'
-    },
-    {
+        },
+        {
         card: 'wildman',
         pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/vanGoghWildMan-small.png'
-    },
-    {
+        },
+        {
         card: 'starryNight',
         pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/vanGoghStarryNight-small.png'
-    },
-    {
+        },
+        {
         card: 'starryNight',
         pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/vanGoghStarryNight-small.png'
-    },
-    {
+        },
+        {
         card: 'skeleton',
         pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/vanGoghSkeleton-small.png'
-    },
-    {
+        },
+        {
         card: 'skeleton',
         pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/vanGoghSkeleton-small.png'
-    },
-    {
+        },
+        {
         card: 'flowers',
         pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/vanGoghBeautyEverywhere-small.png'
-    },
-    {
+        },
+        {
         card: 'flowers',
         pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/vanGoghBeautyEverywhere-small.png'
-    },
-    {
+        },
+        {
         card: 'headshot',
         pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/vanGoghHeadShot-small.png'
-    },
-    {
+        },
+        {
         card: 'headshot',
         pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/vanGoghHeadShot-small.png'
-    },
-    {
+        },
+        {
         card: 'mullberrytree',
         pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/vanGoghMulberryTree-small.png'
-    },
-    {
+        },
+        {
         card: 'mullberrytree',
-        pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/vanGoghMulberryTree-small.png'
-    }
+        pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/vanGoghMulberryTree-small.png',
+        }
     ],
 // Create the Gameboard.
     creatingBoard() {
         const gameboard = document.querySelector('.board')
+        // this.cardsList.sort(() => .5 - Math.random())
         for (let i = 0; i < this.cardsList.length; i++){
             let cards = document.createElement('img')
             cards.setAttribute('src', 'Front-Back/memoryBack.png') 
             cards.setAttribute('id', i)
-            cards.setAttribute('class', 'cards')
+            cards.setAttribute('class', 'cards')       
             gameboard.append(cards)  
-            this.cardsList.sort( () => .5 - Math.random() )
             cards.addEventListener('click', (event) => memGame.flipTheCard(event))
-            }
-        },
+            this.cardsList[i].disabled = false
+        }
+    },
 // Check for matches
     checkMatches () {
         let onePicked = cardsPicked[0] 
         let twoPicked = cardsPicked[1] 
+        let message = document.querySelector('.messages')
         if (onePicked.card === twoPicked.card){
-            alert('You fournd a match')
+            message.innerHTML = 'You found a match!'
             memGame.positiveMatch()
         } else {
-            alert('These do not match')
+           message.innerHTML = 'Those do not match. Try again!'
            memGame.negativeMatch()
         }
 
@@ -103,20 +103,28 @@ const memGame = {
         const match1 = document.getElementById(pick1)
         const match2 = document.getElementById(pick2)
         match1.setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/memoryBlank.jpg')
+        cardsPicked[0].disabled = true
         match2.setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/memoryBlank.jpg')
+        cardsPicked[1].disabled = true
         this.scoring()
         cardsPicked = []
         cardsPickedId = []
+        this.win()
     },
 // Flip your card
     flipTheCard(event) {
         let selectedCard = event.target.id
-        cardsPicked.push(this.cardsList[selectedCard])
+        let card = this.cardsList[selectedCard]
+        console.log(card)
+        if (card.disabled) {
+            return
+        } 
+        cardsPicked.push(card)
         cardsPickedId.push(selectedCard)
-        event.target.src = this.cardsList[selectedCard].pic
+        event.target.src = card.pic
         if (cardsPicked.length === 2){
             setTimeout(this.checkMatches, 300)
-        }   
+        } 
     },
 // Scoring
     scoring () {
@@ -125,17 +133,13 @@ const memGame = {
     },
 // Game is won
     win () {
-        if (this.cardsList === 0){
-            alert('You win! ')
+        let message = document.querySelector('.messages')
+        let score = document.getElementById('scoreNum')
+        if (score.innerHTML == 6){
+            message.innerHTML = 'You won!'
         }
     }
 }
 // END OF OBJECT, don't put anything after this curly bracket
 
 memGame.creatingBoard()
-
-// Eventlisteners
-// let pushedButton = document.getElementsByClassName('cards')
-// console.log(pushedButton)
-// pushedButton.addEventListener('click', () => memGame.flipTheCard())
-

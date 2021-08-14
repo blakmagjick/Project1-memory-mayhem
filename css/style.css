@@ -1,20 +1,27 @@
+/* * {
+    border: 1px solid white;  
+} */
+
 body {
     background-color: rgb(29, 29, 38);
     width: 700px;
-    /* height: 470px; */
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 30px;
 }
-
 .board {
-    margin: 25px;
+    width:650px;
     display: flex;
     flex-wrap: wrap;
-    padding: 5px;
+    padding: 25px;
 }
-
 .cards {
     padding: 5px;
 }
-
 .score {
     color:darkgrey; 
+}
+.messages {
+    color: white;
+    height: 40px;
+    text-align: center;
 }
