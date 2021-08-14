@@ -60,7 +60,7 @@ const memGame = {
 // Create the Gameboard.
     creatingBoard() {
         const gameboard = document.querySelector('.board')
-        // this.cardsList.sort(() => .5 - Math.random())
+        this.cardsList.sort(() => .5 - Math.random())
         for (let i = 0; i < this.cardsList.length; i++){
             let cards = document.createElement('img')
             cards.setAttribute('src', 'Front-Back/memoryBack.png') 
