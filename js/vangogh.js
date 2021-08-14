@@ -5,7 +5,7 @@
     cardsPickedId = []
     matchedCards = []
 
-const memGame = {
+const memGame3 = {
     // Card Options
     cardsList: [
         {
@@ -67,7 +67,7 @@ const memGame = {
             cards.setAttribute('id', i)
             cards.setAttribute('class', 'cards')       
             gameboard.append(cards)  
-            cards.addEventListener('click', (event) => memGame.flipTheCard(event))
+            cards.addEventListener('click', (event) => memGame3.flipTheCard(event))
             this.cardsList[i].disabled = false
         }
     },
@@ -78,10 +78,10 @@ const memGame = {
         let message = document.querySelector('.messages')
         if (onePicked.card === twoPicked.card){
             message.innerHTML = 'You found a match!'
-            memGame.positiveMatch()
+            memGame3.positiveMatch()
         } else {
            message.innerHTML = 'Those do not match. Try again!'
-           memGame.negativeMatch()
+           memGame3.negativeMatch()
         }
 
     },
@@ -115,7 +115,6 @@ const memGame = {
     flipTheCard(event) {
         let selectedCard = event.target.id
         let card = this.cardsList[selectedCard]
-        console.log(card)
         if (card.disabled) {
             return
         } 
@@ -142,4 +141,4 @@ const memGame = {
 }
 // END OF OBJECT, don't put anything after this curly bracket
 
-memGame.creatingBoard()
+memGame3.creatingBoard()
