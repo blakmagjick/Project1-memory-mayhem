@@ -7,14 +7,18 @@ body {
     width: 700px;
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 30px;
+    color:darkgrey;
     margin: auto;
+    text-align: center;
 }
 h1 {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 40px;
-    color:darkgrey; 
-    text-align: center;
     margin: 0;
+}
+h2 {
+    color: darkgrey;
+    font-size: 30px;
 }
 .board {
     width:650px;
@@ -33,7 +37,7 @@ h1 {
 .score {
     color:darkgrey; 
 }
-#restart {
+#buttons {
     font-size: 25px;
     background-color: rgb(0 117 140);
     color:darkgrey; 
