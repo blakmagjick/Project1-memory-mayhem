@@ -17,8 +17,18 @@ body {
 .cards {
     padding: 5px;
 }
+#header {
+    display: flex;
+    justify-content: space-between;
+}
 .score {
     color:darkgrey; 
+}
+#restart {
+    font-size: 20px;
+    background-color: rgb(0 117 140);
+    color: white;
+    border-radius: 15px;
 }
 .messages {
     color: white;

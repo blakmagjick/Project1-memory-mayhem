@@ -10,9 +10,11 @@
     <body>
         <script type="text/javascript" src="js/memory.js" defer></script>
 
-        <div class='score'>Score: <span id='scoreNum'></span>
+        <div id='header'>
+            <div class='score'>Score: <span id='scoreNum'></span></div>
+            <div><button type='button' onclick="location.reload()" id="restart">Restart</button></div>
         </div>
-
+      
         <div class='board'></div>
 
         <div class='messages'></div>
