@@ -57,6 +57,40 @@ const memGame3 = {
         pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/vanGoghMulberryTree-small.png',
         }
     ],
+    cardList1: [
+        {
+        card: 'cherryblossoms',
+        pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/cherryblossoms.png',
+        },
+        {
+        card: 'harbour',
+        pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/harbour.png',
+        },
+        {
+        card: 'pinkflowers',
+        pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/pink flowers.png',
+        },
+        {
+        card: 'room',
+        pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/room.png',
+        },
+        {
+        card: 'sunflowers',
+        pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/sunflowers.png',
+        },
+        {
+        card: 'tableflowers',
+        pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/tableflowers.png',
+        },
+        {
+        card: 'thefields',
+        pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/thefields.png',
+        },
+        {
+        card: 'trees',
+        pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/trees.png',
+        }
+    ],
 // Create the Gameboard.
     creatingBoard() {
         const gameboard = document.querySelector('.board')
@@ -71,6 +105,7 @@ const memGame3 = {
             this.cardsList[i].disabled = false
         }
     },
+    
 // Check for matches
     checkMatches () {
         let onePicked = cardsPicked[0] 
@@ -83,7 +118,6 @@ const memGame3 = {
            message.innerHTML = 'Those do not match. Try again!'
            memGame3.negativeMatch()
         }
-
     },
 // Does not match
     negativeMatch () {
@@ -142,3 +176,4 @@ const memGame3 = {
 // END OF OBJECT, don't put anything after this curly bracket
 
 memGame3.creatingBoard()
+// memGame3.creatingBoardHard()
