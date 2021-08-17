@@ -20,6 +20,12 @@ h2 {
     color: darkgrey;
     font-size: 30px;
 }
+#whichgame{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
 .board {
     width:650px;
     display: flex;
