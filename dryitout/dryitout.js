@@ -1,11 +1,13 @@
 // Project 1 - Memory Mayhem
 
 // Empty Arrays
-cardsPicked = []
-cardsPickedId = []
-matchedCards = []
+let cardsPicked = []
+let cardsPickedId = []
+let matchedCards = []
 
-let animal = [
+const animals = {
+    background: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/animal background.png', 
+    cards: [
     {
     card: 'cardinal', 
     pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/animal-images/cardinal.png'
@@ -55,7 +57,11 @@ let animal = [
     pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/animal-images/turtle.png',
     }
 ]
-let halloween = [
+}
+
+const halloween = {
+    background: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/halloBack.png',
+    cards: [
     {
     card: 'cat', 
     pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/halloween-images/cat.png'
@@ -104,8 +110,12 @@ let halloween = [
     card: 'witch',
     pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/halloween-images/witch.png',
     }
-]
-let vanGogh = [
+    ]
+}
+
+const vanGogh = {
+    background: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/memoryBack.png',
+    cards: [
     {
     card: 'cats', 
     pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/cats.png'
@@ -154,7 +164,8 @@ let vanGogh = [
     card: 'mullberrytree',
     pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/vanGogh-images/vanGoghMulberryTree-small.png',
     }
-]
+    ]
+}
 
 class MemoryGame {
     constructor(theme){
@@ -162,78 +173,47 @@ class MemoryGame {
     }
     creatingBoard() {
         const gameboard = document.querySelector('.board')
-        if (this.theme == 'animals'){
-            animal.sort(() => .5 - Math.random())
-            for (let i = 0; i < animal.length; i++){
-                let cards = document.createElement('img')
-                cards.setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/animal background.png')
-                cards.setAttribute('id', i)
-                cards.setAttribute('class', 'cards') 
-                cards.setAttribute('disabled', 'false') 
-                // animal[i].disabled = false
-                gameboard.append(cards)  
-                cards.addEventListener('click', (event) => this.flipTheCard(event))
-            }
-        } if (this.theme == 'halloween') {
-            halloween.sort(() => .5 - Math.random())
-            for (let i = 0; i < halloween.length; i++) {
-                let cards = document.createElement('img')
-                cards.setAttribute('src', 'Front-Back/halloBack.png') 
-                cards.setAttribute('id', i) 
-                cards.setAttribute('class', 'cards')
-                cards.setAttribute('disabled', 'false') 
-                // halloween[i].disabled = false    
-                gameboard.append(cards)  
-                cards.addEventListener('click', (event) => this.flipTheCard(event))
-            }    
-        } if (this.theme == 'vanGogh') {
-            vanGogh.sort(() => .5 - Math.random())
-            for (let i = 0; i < vanGogh.length; i++){
-                let cards = document.createElement('img')
-                cards.setAttribute('src', 'Front-Back/memoryBack.png')
-                cards.setAttribute('id', i)
-                cards.setAttribute('class', 'cards')  
-                cards.setAttribute('disabled', 'false')
-                // vanGogh[i].disabled = false     
-                gameboard.append(cards)  
-                cards.addEventListener('click', (event) => this.flipTheCard(event))
-            }
-        }     
-    }
+        this.theme.cards.sort(() => .5 - Math.random())
+        for (let i = 0; i < this.theme.cards.length; i++){
+            let squares = document.createElement('img')
+            squares.setAttribute('src', this.theme.background)
+            squares.setAttribute('id', i)
+            squares.setAttribute('class', 'cards') 
+            squares.setAttribute('disabled', 'false') 
+            gameboard.append(squares)  
+            squares.addEventListener('click', (event) => this.flipTheCard(event))
+        }
+    }   
     flipTheCard(event) {
-            let selectedCard = event.target.id
-            let card = this.theme[selectedCard]
-            console.log(selectedCard)
-            console.log(card)
+        let selectedCard = event.target.id
+        let card = this.theme.cards[selectedCard]
+        console.log(selectedCard)
+        console.log(card)
             if (card.disabled) {
                 return
             } 
-            cardsPicked.push(card)
-            cardsPickedId.push(selectedCard)
-            event.target.src = animal[selectedCard].pic
+        cardsPicked.push(card)
+        cardsPickedId.push(selectedCard)
+        event.target.src = this.theme.cards[selectedCard].pic
             if (cardsPicked.length === 2){
-                setTimeout(this.checkMatches, 300)
+                setTimeout(() => this.checkMatches(), 500)
             } 
     }
-    negativeMatch () {
+    negativeMatch() {
         let pick1 = cardsPickedId[0]
         let pick2 = cardsPickedId[1]
         const match = document.getElementById(pick1)
         const match1 = document.getElementById(pick2)
-        match.setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/halloBack.png')
-        match1.setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/halloBack.png')
+        match.setAttribute('src', this.theme.background)
+        match1.setAttribute('src', this.theme.background)
         cardsPicked = []
         cardsPickedId = []
     }
-    positiveMatch () {
+    positiveMatch() {
         let pick1 = cardsPickedId[0]
-        console.log(pick1)
         let pick2 = cardsPickedId[1]
-        console.log(pick2)
         const match1 = document.getElementById(pick1)
-        console.log(match1)
         const match2 = document.getElementById(pick2)
-        console.log(match2)
         match1.setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/memoryBlank.jpg')
         cardsPicked[0].disabled = true
         match2.setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/memoryBlank.jpg')
@@ -243,14 +223,11 @@ class MemoryGame {
         cardsPickedId = []
         this.win()
     }
-    checkMatches () {
+    checkMatches() {
         let onePicked = cardsPicked[0] 
-        console.log(onePicked)
         let twoPicked = cardsPicked[1]
-        console.log(twoPicked)
         let message = document.querySelector('.messages')
-        console.log(message)
-        if (onePicked === twoPicked){
+        if (onePicked.card === twoPicked.card){
             message.innerHTML = 'You found a match!'
             this.positiveMatch()
         } else {
@@ -258,11 +235,11 @@ class MemoryGame {
             this.negativeMatch()
         }
     }
-    scoring () {
+    scoring() {
         let score = document.getElementById('scoreNum')
         score.innerHTML++
     }
-    win () {
+    win() {
         let message = document.querySelector('.messages')
         let score = document.getElementById('scoreNum')
         if (score.innerHTML == 6){
@@ -271,10 +248,5 @@ class MemoryGame {
     }
 }
 
-let tester = new MemoryGame('animals')
-console.log(tester)
-
+let tester = new MemoryGame(animals)
 tester.creatingBoard()
-
-
-// Trying to DRY out the code...
