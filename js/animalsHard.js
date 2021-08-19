@@ -133,3 +133,12 @@ const animalsHard = {
 
 let game = new MemoryGame(animalsHard)
 game.creatingBoard()
+
+const audio = new Audio('/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/music/Borrtex - Animals.mp3')
+
+animalMusic = () => {
+    audio.play()
+}
+stopAnimalMusic = () => {
+    audio.pause()
+}

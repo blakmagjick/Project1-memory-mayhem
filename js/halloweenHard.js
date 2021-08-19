@@ -133,3 +133,12 @@ const halloweenHard = {
 
 let game = new MemoryGame(halloweenHard)
 game.creatingBoard()
+
+const audio = new Audio('/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/music/Thisquietarmy - As the Creatures Unravel from Within_Vampyr.mp3')
+
+halloweenMusic = () => {
+    audio.play()
+}
+stopHalloweenMusic = () => {
+    audio.pause()
+}

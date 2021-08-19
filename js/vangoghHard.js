@@ -133,3 +133,12 @@ const vanGoghHard = {
 
 let game = new MemoryGame(vanGoghHard)
 game.creatingBoard()
+
+const audio = new Audio('/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/music/Cambo - Chill Funk.mp3')
+
+vanGoghMusic = () => {
+    audio.play()
+}
+stopVanGoghMusic = () => {
+    audio.pause()
+}

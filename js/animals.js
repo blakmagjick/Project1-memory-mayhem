@@ -61,4 +61,3 @@ const animals = {
 
 let game = new MemoryGame(animals)
 game.creatingBoard()
-
