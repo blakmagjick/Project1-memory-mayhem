@@ -35,6 +35,11 @@ Every version of the game has a "Return to Main Menu" and "Restart" button.
 [x] Make a restart button.
 
 ### Stretch Goals
+These are the things I added before the presentation.
+[x] Allowing the user to pick between 3 different categories of cards to play with (Halloween, vanGogh, Animals)
+[x] Have more options for how many cards can be played (Easy, medium, hard?)
+[x] Give the option to choose background music
+
 These are the thing I wanted to add, but didn't get them to work before the class presentation. 
 
 - Add a timer option to make the game a little harder, player will need to match all the cards before the timer runs out.
