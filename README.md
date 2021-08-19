@@ -24,7 +24,7 @@ Each of the hard version have the option to play music while playing. And of cou
 
 Every version of the game has a "Return to Main Menu" and "Restart" button.
 
-###MVP list
+### MVP list
 [x] Figure out which pictures I'm using for the game.
 [x] Make a grid for the cards.
 [x] Figure out how to flip cards.
@@ -34,7 +34,7 @@ Every version of the game has a "Return to Main Menu" and "Restart" button.
 [x] Stylize it.
 [x] Make a restart button.
 
-###Stretch Goals
+### Stretch Goals
 These are the thing I wanted to add, but didn't get them to work before the class presentation. 
 
 - Add a timer option to make the game a little harder, player will need to match all the cards before the timer runs out.
