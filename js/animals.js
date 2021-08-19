@@ -6,55 +6,55 @@ cardsPickedId = []
 matchedCards = []
 
 const animals = {
-    background: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/animal background.png', 
+    background: 'Front-Back/animal background.png', 
     cards: [
     {
     card: 'cardinal', 
-    pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/animal-images/cardinal.png'
+    pic: 'animal-images/cardinal.png'
     },
     {
     card: 'cardinal',
-    pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/animal-images/cardinal.png'
+    pic: 'animal-images/cardinal.png'
     },
     {
     card: 'cat',
-    pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/animal-images/cat.png'
+    pic: 'animal-images/cat.png'
     },
     {
     card: 'cat',
-    pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/animal-images/cat.png'
+    pic: 'animal-images/cat.png'
     },
     {
     card: 'fox',
-    pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/animal-images/fox.png'
+    pic: 'animal-images/fox.png'
     },
     {
     card: 'fox',
-    pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/animal-images/fox.png'
+    pic: 'animal-images/fox.png'
     },
     {
     card: 'owl',
-    pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/animal-images/owl.png'
+    pic: 'animal-images/owl.png'
     },
     {
     card: 'owl',
-    pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/animal-images/owl.png'
+    pic: 'animal-images/owl.png'
     },
     {
     card: 'sloth',
-    pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/animal-images/sloth.png'
+    pic: 'animal-images/sloth.png'
     },
     {
     card: 'sloth',
-    pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/animal-images/sloth.png'
+    pic: 'animal-images/sloth.png'
     },
     {
     card: 'turtle',
-    pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/animal-images/turtle.png'
+    pic: 'animal-images/turtle.png'
     },
     {
     card: 'turtle',
-    pic: '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/animal-images/turtle.png',
+    pic: 'animal-images/turtle.png',
     }
 ]
 }

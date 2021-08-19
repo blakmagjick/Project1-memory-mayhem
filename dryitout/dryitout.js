@@ -43,9 +43,9 @@ class MemoryGame {
         let pick2 = cardsPickedId[1]
         const match1 = document.getElementById(pick1)
         const match2 = document.getElementById(pick2)
-        match1.setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/memoryBlank.jpg')
+        match1.setAttribute('src', 'Front-Back/memoryBlank.jpg')
         cardsPicked[0].disabled = true
-        match2.setAttribute('src', '/Users/suzyq/Desktop/GA/sei-bromeliad/projects/project-1-memorymayhem/Project1-memory-mayhem/Front-Back/memoryBlank.jpg')
+        match2.setAttribute('src', 'Front-Back/memoryBlank.jpg')
         cardsPicked[1].disabled = true
         this.scoring()
         cardsPicked = []
