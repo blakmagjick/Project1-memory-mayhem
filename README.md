@@ -26,18 +26,28 @@ Every version of the game has a "Return to Main Menu" and "Restart" button.
 
 ### MVP list
 [x] Figure out which pictures I'm using for the game.
+
 [x] Make a grid for the cards.
+
 [x] Figure out how to flip cards.
+
 [x] Figure out how to check if the cards match.
+
 [x] Add scoreboard to game.
+
 [x] Set up messages instead of alerts.
+
 [x] Stylize it.
+
 [x] Make a restart button.
 
 ### Stretch Goals
 These are the things I added before the presentation.
+
 [x] Allowing the user to pick between 3 different categories of cards to play with (Halloween, vanGogh, Animals)
+
 [x] Have more options for how many cards can be played (Easy, medium, hard?)
+
 [x] Give the option to choose background music
 
 These are the thing I wanted to add, but didn't get them to work before the class presentation. 
