@@ -18,8 +18,6 @@ class MemoryGame {
     flipTheCard(event) {
         let selectedCard = event.target.id
         let card = this.theme.cards[selectedCard]
-        console.log(selectedCard)
-        console.log(card)
             if (card.disabled) {
                 return
             } 
@@ -72,9 +70,9 @@ class MemoryGame {
     }
     win() {
         let message = document.querySelector('.messages')
-        let score = document.getElementById('scoreNum')
-        if (score == 6){
-            message.innerHTML = 'You won!'
-        }       
+        let score = document.getElementById('scoreNum').innerText
+        if (score == this.theme.cards.length/2) {
+                message.innerHTML = 'You won!' 
+            }  
     }
 }

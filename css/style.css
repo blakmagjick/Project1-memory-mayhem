@@ -38,11 +38,12 @@ h2 {
     margin: auto;
 }
 #hardboard {
-    width: 1000px;
+    width: 900px;
 }
 .cards {
     padding: 5px;
     border-radius: 25px;
+    width: 125px;
 }
 #header {
     width: auto;
