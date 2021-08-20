@@ -43,6 +43,10 @@ Every version of the game has a "Return to Main Menu" and "Restart" button.
 
 [x] Make a restart button.
 
+### Added because of QA Feedback
+- Changed 'Score' to 'Matches' and added an 'Attempts' count
+- Moved 'Main Menu' button to the top of the screen, instead of the bottom
+
 ### Stretch Goals
 These are the things I added before the presentation.
 
