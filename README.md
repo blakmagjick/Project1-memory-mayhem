@@ -1,6 +1,8 @@
 # Project1-memory-mayhem
 GA SEI Unit 1 final project.
 
+## Link to game --> https://blakmagjick.github.io/Project1-memory-mayhem/gogh-index.html
+
 ## Project One
 For this project, we needed to pick a game to make. 
 I decided to go with a matching/concentration game. 
