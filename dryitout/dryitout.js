@@ -23,6 +23,12 @@ class MemoryGame {
             } 
         cardsPicked.push(card)
         cardsPickedId.push(selectedCard)
+            if (cardsPickedId[0] == cardsPickedId[1]){
+                let message = document.querySelector('.messages')
+                message.innerHTML = 'Please pick another card.'
+                cardsPicked.pop()
+                cardsPickedId.pop()
+            }
         event.target.src = this.theme.cards[selectedCard].pic
             if (cardsPicked.length === 2){
                 setTimeout(() => this.checkMatches(), 500)
@@ -60,7 +66,7 @@ class MemoryGame {
             message.innerHTML = 'You found a match!'
             this.positiveMatch()
         } else {
-            message.innerHTML = 'Those do not match. Try again!'
+            message.innerHTML = ''
             this.negativeMatch()
         }
     }

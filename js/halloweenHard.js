@@ -117,7 +117,7 @@ const halloweenHard = {
     pic: 'halloween-images/kittypumpkin.png',
     },
     {
-    card: 'kittypumpkinh',
+    card: 'kittypumpkin',
     pic: 'halloween-images/kittypumpkin.png'
     },
     {
