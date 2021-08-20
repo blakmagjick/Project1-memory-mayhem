@@ -13,9 +13,14 @@
         <h1>Halloween Memory Mayhem - Hard Edition</h1>
 
         <div id='header'>
-            <div class='score'>Score: <span id='scoreNum'></span></div>
-            <div><button type='button' onclick="location.href='hallo-index.html'" id="buttons">Regular Version</button></div>
-            <div><button type='button' onclick="location.reload()" id="buttons">Restart</button></div>
+            <div class='score'>Matches: <span id='scoreNum'></span><div>Attempts: <span id='attempts'></span></div></div>
+            <div>
+                <button type='button' onclick="location.href='hallo-index.html'" id="buttons">Regular Version</button>
+            </div>
+            <div>
+                <button type='button' onclick="location.reload()" id="buttons">Restart</button><br />
+                <button type="button" id="buttons" class="mainpage" onclick="location.href='index.html'">Main Menu</button>
+            </div>
         </div>
       
         <div class='board' id='hardboard'></div>
@@ -24,7 +29,6 @@
         <div>
             <button type="button" id="buttons" class="music" onclick="halloweenMusic()">Play Music</button>
             <button type="button" id="buttons" class="music" onclick="stopHalloweenMusic()">No Music</button><br />
-            <button type="button" id="buttons" class="mainpage" onclick="location.href='index.html'">Back to Main Menu</button>
         </div>
         
 

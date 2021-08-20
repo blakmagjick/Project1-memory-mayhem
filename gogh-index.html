@@ -13,16 +13,19 @@
         <h1>Van Gogh Memory Mayhem</h1>
 
         <div id='header'>
-            <div class='score'>Score: <span id='scoreNum'></span></div>
+            <div class='score'>Matches: <span id='scoreNum'></span><div>Attempts: <span id='attempts'></span></div></div>
             <div>
-            <button type='button' onclick="location.href='gogh-hard-index.html'" id="buttons">Hard Version</button></div>
-            <div><button type='button' onclick="location.reload()" id="buttons">Restart</button></div>
+                <button type='button' onclick="location.href='gogh-hard-index.html'" id="buttons">Hard Version</button>
+            </div>
+            <div>
+                <button type='button' onclick="location.reload()" id="buttons">Restart</button><br />
+                <button type="button" id="buttons" class="mainpage" onclick="location.href='index.html'">Main Menu</button>
+            </div>
         </div>
       
         <div class='board'></div>
 
         <div class='messages'></div>
-        <button type="button" id="buttons" class="mainpage" onclick="location.href='index.html'">Back to Main Menu</button>
 
     </body>
 </html>

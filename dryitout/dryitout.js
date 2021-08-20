@@ -69,6 +69,11 @@ class MemoryGame {
             message.innerHTML = ''
             this.negativeMatch()
         }
+        this.countAttempts()
+    }
+    countAttempts(){
+        let attempts = document.getElementById('attempts')
+        attempts.innerHTML++
     }
     scoring() {
         let score = document.getElementById('scoreNum')
