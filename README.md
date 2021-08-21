@@ -61,6 +61,7 @@ These are the thing I wanted to add, but didn't get them to work before the clas
 - Add a timer option to make the game a little harder, player will need to match all the cards before the timer runs out.
 - Two players are playing on the same board, and the winner is who matches the most pairs
 - Add fireworks when the player wins
+- Add a scoreboard, of the least amount of attempts to win
 
 
 
